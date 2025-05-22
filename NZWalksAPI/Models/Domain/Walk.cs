@@ -18,8 +18,6 @@
         public Guid RegionId { get; set; }
 
 
-
-        // Navigation properties
         public Difficulty Difficulty { get; set; }
 
         public Region Region { get; set; }

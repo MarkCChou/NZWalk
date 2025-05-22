@@ -16,7 +16,6 @@ namespace NZWalks.API.Controllers
             _localImageRepository = localImageRepository;
         }
 
-        // POST: /api/Images/Upload
         [HttpPost]
         [Route("Upload")]
         public async Task<IActionResult> Upload([FromForm] ImagesUploadRequestDto request)
@@ -25,7 +24,6 @@ namespace NZWalks.API.Controllers
 
             if (ModelState.IsValid)
             {
-                // convert DTO to Domain model
                 var imageDomainModel = new Image
                 {
                     File = request.File,
@@ -35,8 +33,6 @@ namespace NZWalks.API.Controllers
                     FileDescription = request.FileDescription,
 
                 };
-
-                // User repository to upload image
                 await _localImageRepository.Upload(imageDomainModel);
 
                 return Ok(imageDomainModel);
