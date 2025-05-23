@@ -17,10 +17,9 @@ namespace NZWalks.API.Controllers
             _userManager = userManager;
             _tokenRepository = tokenRepository;
         }
-        // POST: /api/Auth/Register
+
         [HttpPost]
         [Route("Register")]
-
 
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequestDto)
         {
@@ -33,7 +32,7 @@ namespace NZWalks.API.Controllers
 
             if (identityResult.Succeeded)
             {
-                // Add roles to this User
+
                 if (registerRequestDto.Roles != null && registerRequestDto.Roles.Any())
                 {
                     identityResult = await _userManager.AddToRolesAsync(identityUser, registerRequestDto.Roles);
@@ -42,13 +41,10 @@ namespace NZWalks.API.Controllers
                         return Ok("User was registered! please login again.");
                     }
                 }
-
             }
-
             return BadRequest("Something went wrong!");
         }
 
-        // POST:/api/Auth/Login
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequestDto)
@@ -61,27 +57,20 @@ namespace NZWalks.API.Controllers
 
                 if (checkPasswordResult)
                 {
-                    // Get Roles for this user
                     var roles = await _userManager.GetRolesAsync(user);
 
                     if (roles != null)
                     {
-                        // Create Token
-
                         var jwtToken = _tokenRepository.CreateJWTToken(user, roles.ToList());
-
                         var response = new LoginResponseDto
                         {
                             JwtToken = jwtToken
                         };
 
-
                         return Ok(response);
-
                     }
                 }
             }
-
             return BadRequest("Username or password incorrect");
         }
 

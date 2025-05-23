@@ -13,6 +13,7 @@ namespace NZWalks.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
+
     public class RegionsController : ControllerBase
     {
         private readonly IRegionRepository _regionRepository;
@@ -28,7 +29,7 @@ namespace NZWalks.API.Controllers
             _logger = logger;
         }
         [HttpGet]
-        [Authorize(Roles = "Reader")]
+        [Authorize(Roles = "Reader,Writer")]
         public async Task<IActionResult> GetAll()
 
         {
@@ -42,7 +43,7 @@ namespace NZWalks.API.Controllers
         }
         [HttpGet]
         [Route("{id:Guid}")]
-        [Authorize(Roles = "Reader")]
+        [Authorize(Roles = "Reader,Writer")]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
 

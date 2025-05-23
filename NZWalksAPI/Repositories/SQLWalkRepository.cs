@@ -13,7 +13,6 @@ namespace NZWalks.API.Repositories
             _dbContext = dbContext;
         }
 
-        //private NZWalksDbContext nzWalksDbContext = new NZWalksDbContext()
 
         public async Task<Walk> CreateAsync(Walk walk)
         {
@@ -49,12 +48,11 @@ namespace NZWalks.API.Repositories
                 }
             }
 
+            // Pagination
+
             var skipResults = (pageNumber - 1) * pageSize;
 
             return await walks.Skip(skipResults).Take(pageSize).ToListAsync();
-
-
-            return await walks.ToListAsync();
 
         }
 
