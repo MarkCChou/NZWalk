@@ -21,7 +21,7 @@ namespace NZWalks.API.Repositories
             var localFilePath = Path.Combine(_webHostEnvironment.ContentRootPath, "Images",
                $"{image.FileName}{image.FileExtension}");
 
-            // Upload Image to Local Path
+
 
             using var stream = new FileStream(localFilePath, FileMode.Create);
             await image.File.CopyToAsync(stream);
@@ -32,7 +32,7 @@ namespace NZWalks.API.Repositories
 
             image.FilePath = urlFilePath;
 
-            // Add Image to the Image Table
+
             await _dbcontext.Images.AddAsync(image);
             await _dbcontext.SaveChangesAsync();
 
