@@ -31,9 +31,9 @@
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 **serilog**
--Serilog
--Serilog.AspNetCore
--Serilog.Sinks.Console
--Serilog.Sinks.File
+- Serilog
+- Serilog.AspNetCore
+- Serilog.Sinks.Console
+- Serilog.Sinks.File
 
 -
