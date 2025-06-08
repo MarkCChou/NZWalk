@@ -20,20 +20,20 @@
 
 ## Package
 
--entityframe work
-Microsoft.EntityFrameworkCore.SqlServer
-Microsoft.EntityFrameworkCore.Tools
+**entityframe work**
+-Microsoft.EntityFrameworkCore.SqlServer
+-Microsoft.EntityFrameworkCore.Tools
 
--authentication
-Microsoft.AspNetCore.Authentication.JwtBearer
-Microsoft.IdentityModel.Tokens
-System.IdentityModel.Tokens.Jwt
-Microsoft.AspNetCore.Identity.EntityFrameworkCore
+**authentication&authorization**
+-Microsoft.AspNetCore.Authentication.JwtBearer
+-Microsoft.IdentityModel.Tokens
+-System.IdentityModel.Tokens.Jwt
+-Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
--serilog
-Serilog
-Serilog.AspNetCore
-Serilog.Sinks.Console
-Serilog.Sinks.File
+**serilog**
+-Serilog
+-Serilog.AspNetCore
+-Serilog.Sinks.Console
+-Serilog.Sinks.File
 
 -
