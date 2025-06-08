@@ -18,3 +18,22 @@
 - MVC frontend communicates with the API via `HttpClientFactory`.
 - Includes custom error handling middleware and logging via Serilog.
 
+## Package
+
+-entityframe work
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+
+-authentication
+Microsoft.AspNetCore.Authentication.JwtBearer
+Microsoft.IdentityModel.Tokens
+System.IdentityModel.Tokens.Jwt
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+-serilog
+Serilog
+Serilog.AspNetCore
+Serilog.Sinks.Console
+Serilog.Sinks.File
+
+-
