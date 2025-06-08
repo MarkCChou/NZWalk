@@ -21,14 +21,14 @@
 ## Package
 
 **entityframe work**
--Microsoft.EntityFrameworkCore.SqlServer
--Microsoft.EntityFrameworkCore.Tools
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
 
 **authentication&authorization**
--Microsoft.AspNetCore.Authentication.JwtBearer
--Microsoft.IdentityModel.Tokens
--System.IdentityModel.Tokens.Jwt
--Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- Microsoft.AspNetCore.Authentication.JwtBearer
+- Microsoft.IdentityModel.Tokens
+- System.IdentityModel.Tokens.Jwt
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
 
 **serilog**
 -Serilog
